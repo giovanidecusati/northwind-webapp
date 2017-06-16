@@ -1,0 +1,15 @@
+<div class="nav-right nav-menu">  
+  <a class="nav-item" routerLink="/home">Home</a>
+  <a class="nav-item" routerLink="/products">Products</a>
+  <a class="nav-item" routerLink="/customers">Customers</a>
+  <a class="nav-item" routerLink="/customers">Orders</a>
+  <a class="nav-item">Welcome, {{ user }}</a>  
+  <span class="nav-item">
+    <a class="button is-primary is-inverted" (click)="logout()">
+        <span class="icon">
+            <i class="fa fa-power-off"></i>
+        </span>
+      <span>Sign Out</span>
+  </a>
+  </span>
+</div>

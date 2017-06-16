@@ -1,0 +1,86 @@
+<app-topbar></app-topbar>
+
+<section class="section">
+  <div class="container">
+    <nav class="panel">
+      <p class="panel-heading">
+        Products Search
+        <span class="navbar-right">
+        <button class="button is-primary">Search</button>
+        </span>
+      </p>
+      <div class="panel-block">
+        <form>
+          <div class="control is-horizontal">
+            <div class="control-label">
+              <label class="label">Name</label>
+            </div>
+            <div class="control-label">
+              <input class="input" type="text" placeholder="i.e.: fish%" />
+            </div>
+            <div class="control-label">
+              <button class="button is-primary">Search</button>
+            </div>
+            <div class="control-label">
+              <button class="button is-link">Clear</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </nav>
+
+    <table class="table is-bordered is-striped is-narrow">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Price</th>
+          <th>Stock</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tfoot>
+        <tr>
+          <th colspan="4">
+            <nav class="pagination is-centered">
+              <a class="pagination-previous">Previous</a>
+              <a class="pagination-next">Next page</a>
+              <ul class="pagination-list">
+                <li><a class="pagination-link">1</a></li>
+                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                <li><a class="pagination-link">45</a></li>
+                <li><a class="pagination-link is-current">46</a></li>
+                <li><a class="pagination-link">47</a></li>
+                <li><span class="pagination-ellipsis">&hellip;</span></li>
+                <li><a class="pagination-link">86</a></li>
+              </ul>
+            </nav>
+          </th>
+        </tr>
+      </tfoot>
+      <tbody>
+        <tr *ngFor="let product of products">
+          <td>{{product.name}}</td>
+          <td>{{product.price}}</td>
+          <td>{{product.stock}}</td>
+          <td class="is-link is-icon">
+            <a class="button is-success is-outlined">
+              <span>Edit</span>
+              <span class="icon is-small">
+                <i class="fa fa-pencil-square-o"></i>
+              </span>              
+            </a>
+            <a class="button is-danger is-outlined">
+              <span>Delete</span>
+              <span class="icon is-small">
+                <i class="fa fa-times"></i>
+              </span>
+            </a>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+
+  </div>
+</section>
+
+<app-footer></app-footer>

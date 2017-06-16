@@ -1,6 +1,6 @@
 import { browser, by, element } from 'protractor';
 
-export class WebAppPage {
+export class NorthwindWebappPage {
   navigateTo() {
     return browser.get('/');
   }

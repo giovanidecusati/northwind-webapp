@@ -1,0 +1,60 @@
+<section class="hero is-primary is-fullheight">
+  <div class="hero-body">
+    <div class="container has-text-centered">
+      <h1 class="title pacifico larger-text">
+        NorthWind Admin Web Application
+      </h1>
+      <div class="columns">
+        <div class="column is-half is-offset-one-quarter">
+          <div class="notification is-danger" *ngIf="errors.length > 0">
+            <ul>
+              <li *ngFor="let error of errors">{{ error.message }}</li>
+            </ul>
+          </div>
+
+          <form [formGroup]="form">
+            <p class="control" id="usernameControl">
+              <input class="input is-large" type="username" placeholder="User login name" formControlName="username" [ngClass]=" {'is-danger': (!form.controls.username.valid && !form.controls.username.pristine) }">
+              <span class="tag is-danger" *ngIf="!form.controls.username.valid && !form.controls.username.pristine">Invalid username.</span>
+            </p>
+
+            <p class="control">
+              <input class="input is-large" type="password" placeholder="User login password" formControlName="password" [ngClass]=" {'is-danger': (!form.controls.password.valid && !form.controls.password.pristine) }">
+              <span class="tag is-danger" *ngIf="!form.controls.password.valid && !form.controls.password.pristine">Invalid user password.</span>
+            </p>
+
+            <p>
+              <button (click)="submit()" class="button is-primary is-inverted is-outlined is-large is-fullwidth" [disabled]="!form.valid">SignIn</button>
+              <br>
+            </p>
+            <hr>
+            <p>
+              <button (click)="showModal()" class="button is-link is-fullwidth">Terms of Service</button>
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="modal animated fadeIn" id="modal">
+  <div class="modal-background"></div>
+  <div class="modal-card">
+    <header class="modal-card-head">
+      <p class="modal-card-title"></p>
+      <button class="delete" (click)="hideModal()"></button>
+    </header>
+    <section class="modal-card-body">
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed lorem ipsum, malesuada vitae tortor at, gravida lobortis diam.
+      Curabitur tincidunt arcu elementum augue volutpat, id aliquet ligula fringilla. Fusce efficitur neque in ipsum facilisis,
+      at scelerisque sapien accumsan. Integer rutrum tempor arcu, vitae faucibus mi porta eu. Donec non lacus velit. Sed
+      at erat hendrerit risus sodales rhoncus. Praesent pulvinar facilisis leo, eget viverra orci commodo varius. Nunc ullamcorper
+      leo vel accumsan tincidunt. Suspendisse luctus urna et euismod posuere. Integer facilisis gravida felis, sed elementum
+      tortor volutpat a. Nam tincidunt scelerisque enim, et lacinia ipsum sodales id.
+    </section>
+    <footer class="modal-card-foot">
+      <button class="button" (click)="hideModal()">OK</button>
+    </footer>
+  </div>
+</div>

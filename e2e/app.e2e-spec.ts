@@ -1,14 +1,14 @@
-import { WebAppPage } from './app.po';
+import { NorthwindWebappPage } from './app.po';
 
-describe('web-app App', () => {
-  let page: WebAppPage;
+describe('northwind-webapp App', () => {
+  let page: NorthwindWebappPage;
 
   beforeEach(() => {
-    page = new WebAppPage();
+    page = new NorthwindWebappPage();
   });
 
-  it('should display message saying app works', () => {
+  it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getParagraphText()).toEqual('app works!');
+    expect(page.getParagraphText()).toEqual('Welcome to app!!');
   });
 });
